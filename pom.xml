@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.automatak.aegis</groupId>
+    <artifactId>documentation</artifactId>
+    <packaging>pom</packaging>
+    <version>0.1.0</version>
+
+    <properties>
+        <jaxb-plugin.verison>0.8.3</jaxb-plugin.verison>
+        <junit.version>4.8.2</junit.version>
+        <lib4s.version>0.1.13-RC2</lib4s.version>
+        <maven-jar-plugin.version>2.4</maven-jar-plugin.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <scala.version>2.10.0</scala.version>
+        <scala.plugin.version>3.1.5</scala.plugin.version>
+        <scalatest.version>1.9.2</scalatest.version>
+        <slf4j.version>1.6.1</slf4j.version>
+    </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>com.agilejava.docbkx</groupId>
+                <artifactId>docbkx-maven-plugin</artifactId>
+                <version>2.0.14</version>
+                <dependencies>
+                    <dependency>
+                        <groupId>net.sf.docbook</groupId>
+                        <artifactId>docbook-xml</artifactId>
+                        <version>5.0-all</version>
+                        <classifier>resources</classifier>
+                        <type>zip</type>
+                        <scope>runtime</scope>
+                    </dependency>
+                </dependencies>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>generate-html</goal>
+                            <goal>generate-pdf</goal>
+                            <goal>generate-manpages</goal>
+                        </goals>
+                        <phase>generate-sources</phase>
+                    </execution>
+                </executions>
+                <configuration>
+                    <!-- shared configuration -->
+                    <sourceDirectory>${basedir}/src/main/docbook</sourceDirectory>
+                    <includes>book.xml</includes>
+                    <generatedSourceDirectory>${project.build.directory}/docbook/generated</generatedSourceDirectory>
+                    <xincludeSupported>true</xincludeSupported>
+                    <highlightSource>1</highlightSource>
+                    <paperType>A4</paperType>
+                    <fop1Extensions>1</fop1Extensions>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+
+
+
+</project>

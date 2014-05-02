@@ -1,0 +1,32 @@
+<?xml version='1.0'?>
+<book xmlns="http://docbook.org/xml/5.0/xsd/docbook.xsd" xmlns:xi="http://www.w3.org/2001/XInclude">
+
+    <bookinfo>
+        <title>opendnp3</title>
+        <subtitle>
+            <para>The Definitive Guide</para>
+            <para>
+                <inlinemediaobject>
+                    <imageobject>
+                        <imagedata fileref="graphics/opendnp3.jpg" />
+                    </imageobject>
+                </inlinemediaobject>
+            </para>
+        </subtitle>
+
+        <org>
+            <orgname>Automatak</orgname>
+            <uri>www.automatak.com/aegis</uri>
+            <email>info@automatak.com</email>
+        </org>
+
+        <copyright>
+            <year>2013-2014</year>
+            <holder>Automatak LLC</holder>
+        </copyright>
+
+    </bookinfo>
+
+    <xi:include href="introduction.xml"/>
+
+</book>
